@@ -88,7 +88,7 @@ def _generate_proto(protoc, source):
   full_path_source = f'{os.getcwd()}/{source}'
   print(f'Full path source: {full_path_source}')
   print('Generating {}...'.format(output))
-  protoc_args = [protoc, '-I.', '--python_out=.', source]
+  protoc_args = [protoc, '-I.', '--python_out=.', full_path_source]
   subprocess.run(args=protoc_args, check=True)
 
 
