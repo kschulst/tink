@@ -82,6 +82,8 @@ def _generate_proto(protoc, source):
     # No need to regenerate if output is newer than source.
     return
 
+  print("Yo!")
+  print('Current dir {}'.format(os.getcwd()))
   print('Generating {}...'.format(output))
   protoc_args = [protoc, '-I.', '--python_out=.', source]
   subprocess.run(args=protoc_args, check=True)
