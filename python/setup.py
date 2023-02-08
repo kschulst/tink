@@ -85,7 +85,13 @@ def _generate_proto(protoc, source):
   print("Yo!")
   print('Current dir {}'.format(os.getcwd()))
   print('Source {}'.format(source))
+  
   full_path_source = f'{os.getcwd()}/{source}'
+  for (root,dirs,files) in os.walk('.', topdown=True):
+      print (root)
+      print (dirs)
+      print (files)
+      print ('--------------------------------')
   print(f'Full path source: {full_path_source}')
   print('Generating {}...'.format(output))
   protoc_args = [protoc, '-I.', '--python_out=.', full_path_source]
