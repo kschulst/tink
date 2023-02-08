@@ -91,7 +91,7 @@ def _generate_proto(protoc, source):
   print(f'Full path source: {full_path_source}')
   print(f'Source filesize: {os.path.getsize(full_path_source)}')
   print('Generating {}...'.format(output))
-  protoc_args = [protoc, '-I.', '--python_out=.', modified_source]
+  protoc_args = [protoc, '-I.', '--python_out=.', source]
   subprocess.run(args=protoc_args, check=True)
 
 
