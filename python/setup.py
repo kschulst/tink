@@ -84,9 +84,11 @@ def _generate_proto(protoc, source):
 
   print('Current dir {}'.format(os.getcwd()))
   print('Source {}'.format(source))
+  print(f'Protoc exe: {protoc}')
   modified_source = f'./{source}'
   print('Modified source {}'.format(modified_source))
-  
+  subprocess.run(args=[protoc, '--version'], check=True)
+  print("after protoc --version")
   full_path_source = f'{os.getcwd()}/{source}'
   print(f'Full path source: {full_path_source}')
   print(f'Source filesize: {os.path.getsize(full_path_source)}')
