@@ -82,22 +82,15 @@ def _generate_proto(protoc, source):
     # No need to regenerate if output is newer than source.
     return
 
-  print("Yo!")
   print('Current dir {}'.format(os.getcwd()))
   print('Source {}'.format(source))
   modified_source = f'./{source}'
   print('Modified source {}'.format(modified_source))
   
   full_path_source = f'{os.getcwd()}/{source}'
-  for (root,dirs,files) in os.walk('.', topdown=True):
-      print (root)
-      print (dirs)
-      print (files)
-      print ('--------------------------------')
   print(f'Full path source: {full_path_source}')
   print('Generating {}...'.format(output))
-  protoc_args = [protoc, '--python_out=.', modified_source]
-  #protoc_args = [protoc, '-I.', '--python_out=.', source]
+  protoc_args = [protoc, '-I.', '--python_out=.', modified_source]
   subprocess.run(args=protoc_args, check=True)
 
 
