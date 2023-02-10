@@ -286,7 +286,7 @@ def main():
     _generate_proto(protoc_command, proto_file)
 
   setuptools.setup(
-      name='tink',
+      name='tink-custombuild',
       version=_TINK_VERSION,
       url='https://github.com/google/tink',
       description='A multi-language, cross-platform library that provides '
